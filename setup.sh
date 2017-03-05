@@ -187,6 +187,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     iterm2 \
     sublime-text \
     mactex \
+    visual-studio-code \
     virtualbox \
     vlc \
     dropbox \
