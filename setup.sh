@@ -163,7 +163,8 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     brew install \
     tree \
     wget \
-    m-cli
+    m-cli \
+    docker
     
     brew tap caskroom/cask
 
@@ -171,12 +172,16 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     brew cask install \
     google-chrome \
     firefox \
+    thunderbird \
     iterm2 \
     sublime-text \
     virtualbox \
     vlc \
     dropbox \
-    alfred
+    alfred \
+    wireshark \
+    vagrant \
+    quassel-client
     
 
     echo "Cleaning Up Cask Files"
