@@ -129,6 +129,15 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
 
       brew install android-sdk
     fi
+    
+    clear
+    echo -e "${RED}Setup for rust (via rustup)? ${NC}[y/N]"
+    read -n 1 -r
+    echo    # (optional) move to a new line
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        curl https://sh.rustup.rs -sSf | sh
+    fi
 
     clear
     echo -e "${RED}Install Databases? ${NC}[y/N]"
