@@ -163,7 +163,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     brew install \
     tree \
     wget \
-    ack
+    m-cli
     
     brew tap caskroom/cask
 
