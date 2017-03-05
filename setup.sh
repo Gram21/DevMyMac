@@ -184,6 +184,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     thunderbird \
     iterm2 \
     sublime-text \
+    mactex \
     virtualbox \
     vlc \
     dropbox \
