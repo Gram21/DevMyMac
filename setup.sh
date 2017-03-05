@@ -194,7 +194,8 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     alfred \
     wireshark \
     vagrant \
-    quassel-client
+    quassel-client \
+    keybase
     
 
     echo "Cleaning Up Cask Files"
