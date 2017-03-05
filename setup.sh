@@ -5,6 +5,8 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
+HOME_DIR="$HOME"
+
 # Ask for the administrator password upfront.
 sudo -v
 
@@ -64,7 +66,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
       echo "Installing NVM"
       curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
 
-      export NVM_DIR="$HOME/.nvm"
+      export NVM_DIR="$HOME_DIR/.nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm so we dont have to reboot the terminal
 
       #Installing Nodejs
