@@ -165,7 +165,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     brew install zsh zsh-completions
     chsh -s $(which zsh)
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    curl https://gist.githubusercontent.com/Gram21/35dc66c4673bb63fa8c1/raw/.zshrc > ~/.zshrc
+    curl https://gist.githubusercontent.com/Gram21/35dc66c4673bb63fa8c1/raw/.zshrc > $HOME_DIR/.zshrc
 
 
     clear
