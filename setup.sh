@@ -64,7 +64,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
       echo "Installing NVM"
       curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
 
-      export NVM_DIR="/Users/adam/.nvm"
+      export NVM_DIR="$HOME/.nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm so we dont have to reboot the terminal
 
       #Installing Nodejs
@@ -72,23 +72,6 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
       echo "Installing Nodejs"
       nvm install node
       nvm use node
-
-      npm install -g coffee-script
-      npm install -g grunt-cli
-      npm install -g gulp
-      npm install -g bower
-      npm install -g jshint
-      npm install -g less
-
-    fi
-
-    clear
-    echo -e "${RED}Install Unity3D? ${NC}[y/N]"
-    read -n 1 -r
-    echo    # (optional) move to a new line
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-      brew cask install unity unity-web-player
 
     fi
 
@@ -120,17 +103,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     fi
 
     clear
-    echo -e "${RED}Install Cocoapods?${NC} [y/N]"
-    read -n 1 -r
-    echo    # (optional) move to a new line
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-      # Install Cocoapods
-      sudo gem install cocoapods
-    fi
-
-    clear
-    echo -e "${RED}Setup for Java Devlopment? ${NC}[y/N]"
+    echo -e "${RED}Setup for Java Development? ${NC}[y/N]"
     read -n 1 -r
     echo    # (optional) move to a new line
     if [[ $REPLY =~ ^[Yy]$ ]]
@@ -175,6 +148,14 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
       brew cask install --appdir="/Applications" mysqlworkbench
     fi
 
+    clear
+    # Install zsh
+    echo "Installing ZSH"
+    brew install zsh zsh-completions
+    chsh -s $(which zsh)
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    curl https://gist.githubusercontent.com/Gram21/35dc66c4673bb63fa8c1/raw/.zshrc > ~/.zshrc
+
 
     clear
     # Install Homebrew Apps
@@ -182,40 +163,26 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     brew install \
     tree \
     wget \
-    ack \
-    heroku-toolbelt
-
-    # Install EMacs
-    echo "Installing EMacs"
-    brew install emacs --with-cocoa
-    brew linkapps emacs
-
+    ack
+    
     brew tap caskroom/cask
 
     echo "Installing Apps"
     brew cask install \
     google-chrome \
-    coderunner \
-    gitter \
-    github-desktop \
-    atom \
-    gitkraken \
-    mamp \
-    macdown \
-    google-drive \
+    firefox \
     iterm2 \
     sublime-text \
     virtualbox \
-    scratch
+    vlc \
+    dropbox \
+    alfred
+    
 
     echo "Cleaning Up Cask Files"
     brew cask cleanup
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
     clear
-
-    echo "${GREEN}Thanks for using DevMyMac! If you liked it, make sure to go to the Github Repo (https://github.com/adamisntdead/DevMyMac) and Star it! If you have any issues, just put them there, and all suggestions and contributions are appreciated!"
 
 else
    echo "Need to install the OSX Command Line Tools (or XCode) First! Starting Install..."
