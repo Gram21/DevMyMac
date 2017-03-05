@@ -2,6 +2,11 @@
 
 [![Join the chat at https://gitter.im/DevMyMac/Lobby](https://badges.gitter.im/DevMyMac/Lobby.svg)](https://gitter.im/DevMyMac/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+Note from Gram21:
+> The original DevMyMac was adapted by me to better satisfy my needs. So the things below might not 100% be accurate according to this repository.
+> Until I found time and muse to adapt the README for an exact list of installed tools etc check setup.sh source code.
+
+
 #### Welcome To DevMyMac!
 DevMyMac is a script that allows the user to setup their OSX / MacOS Computer for Development in
 
