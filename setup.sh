@@ -159,13 +159,6 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
       brew cask install --appdir="/Applications" mysqlworkbench
     fi
 
-    clear
-    # Install zsh
-    echo "Installing ZSH"
-    brew install zsh zsh-completions
-    chsh -s $(which zsh)
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    curl https://gist.githubusercontent.com/Gram21/35dc66c4673bb63fa8c1/raw/.zshrc > $HOME_DIR/.zshrc
 
 
     clear
@@ -202,6 +195,13 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     brew cask cleanup
 
     clear
+    
+    # Install zsh
+    echo "Installing ZSH along with a proper config. Type 'exit' when you get a command line prompt after zsh installation."
+    brew install zsh zsh-completions
+    chsh -s $(which zsh)
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    curl https://gist.githubusercontent.com/Gram21/35dc66c4673bb63fa8c1/raw/.zshrc > $HOME_DIR/.zshrc
 
 else
    echo "Need to install the OSX Command Line Tools (or XCode) First! Starting Install..."
